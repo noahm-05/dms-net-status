@@ -2,6 +2,8 @@
 
 A [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) bar widget that shows your local machine IP, active VPN tunnel IP, and (optionally) your Tailscale IP — built for keeping connectivity visible during HTB labs and other pentest lab work.
 
+![Screenshot](screenshot.png)
+
 ## Features
 
 - Bar pill shows **one address at a time** — **right-click the widget to cycle** through Local, VPN, and Tailscale
