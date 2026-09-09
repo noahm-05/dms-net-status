@@ -1,0 +1,14 @@
+{
+    "id": "netStatus",
+    "name": "Network Status",
+    "description": "Shows your local machine IP and active VPN tunnel IP in the bar. Built for keeping HTB/pentest lab connectivity visible at a glance.",
+    "version": "1.0.0",
+    "author": "Noah",
+    "type": "widget",
+    "capabilities": ["dankbar-widget"],
+    "component": "./NetStatusWidget.qml",
+    "icon": "lan",
+    "settings": "./NetStatusSettings.qml",
+    "permissions": ["settings_read", "settings_write", "process"],
+    "requires": ["ip"]
+}
