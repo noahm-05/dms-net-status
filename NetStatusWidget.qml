@@ -14,7 +14,7 @@ PluginComponent {
         service: TailscaleService
     }
 
-    property int pollIntervalSec: pluginData.pollIntervalSec || 5
+    property int pollIntervalSec: pluginData.pollIntervalSec || 30
     property string vpnPrefixes: pluginData.vpnPrefixes || "tun,wg,ppp,tap"
     property string excludePrefixes: pluginData.excludePrefixes || "docker,veth,br-,virbr"
     property bool compactMode: pluginData.compactMode || false
@@ -203,6 +203,8 @@ PluginComponent {
 
             headerText: I18n.trFor("netStatus", "Network Status")
             showCloseButton: true
+
+            Component.onCompleted: root.refreshNetwork()
 
             headerActions: Component {
                 DankIcon {

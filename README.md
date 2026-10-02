@@ -39,7 +39,7 @@ dms plugins install netStatus
 
 ## Settings
 
-- **Refresh Interval** — how often to re-check interfaces (default 5s)
+- **Refresh Interval** — how often to re-check interfaces (default 30s; the popout also refreshes each time it opens)
 - **Compact Mode** — icon only in the bar, no IP text
 - **Include Tailscale** — adds Tailscale to the right-click rotation and its own popout row
 - **VPN Interface Prefixes** — comma-separated interface name prefixes treated as VPN tunnels (default `tun,wg,ppp,tap`)
