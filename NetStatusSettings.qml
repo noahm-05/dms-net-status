@@ -27,7 +27,7 @@ PluginSettings {
         settingKey: "pollIntervalSec"
         label: "Refresh Interval"
         description: "How often to check interfaces for IP changes"
-        defaultValue: 5
+        defaultValue: 30
         minimum: 2
         maximum: 60
         unit: "sec"
