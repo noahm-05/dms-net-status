@@ -1,6 +1,6 @@
 # Network Status
 
-A [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) bar widget that shows your local machine IP, active VPN tunnel IP, and (optionally) your Tailscale IP — built for keeping connectivity visible during HTB labs and other pentest lab work.
+A [Dux Shell](https://github.com/duxlabs-dev/dux-shell) (formerly DankMaterialShell, `dms`) bar widget that shows your local machine IP, active VPN tunnel IP, and (optionally) your Tailscale IP — built for keeping connectivity visible during HTB labs and other pentest lab work.
 
 ![Screenshot](screenshot.png)
 
@@ -18,13 +18,16 @@ A [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) bar widg
 ### Manually
 
 ```bash
-cd ~/.config/DankMaterialShell/plugins
+mkdir -p ~/.config/dms/plugins
+cd ~/.config/dms/plugins
 git clone https://github.com/noahm-05/dms-net-status NetStatus
 ```
 
-Then in DMS Settings → Plugins, click "Scan for Plugins" and enable **Network Status**. Add it to a bar section from Settings → DankBar.
+Then open Settings → Plugins, scan for plugins, and enable **Network Status**. Add it to a bar section from Settings → Bar.
 
-### Via DMS CLI (once available in the registry)
+Upgrading from DMS 1.x? DMS 2.0 moves `~/.config/DankMaterialShell` to `~/.config/dms` automatically and leaves a symlink at the old path, so an existing clone keeps working. Run `git pull` in the plugin folder to get the 2.0-compatible version.
+
+### Via DMS CLI
 
 ```bash
 dms plugins install netStatus
@@ -57,9 +60,19 @@ Both prefix lists are configurable, so this works whether your lab VPN comes up 
 
 ## Requirements
 
-- DankMaterialShell
+- Dux Shell / DMS **2.0 or newer**. Version 1.1.0 of this plugin uses the 2.0 widget library (`qs.DCommon.Widgets`) and will not load on DMS 1.x. If you are still on 1.x, stay on plugin version 1.0.0 (`git checkout 26b90b8` in the plugin folder).
 - `iproute2` (the `ip` command with `-j` JSON output support) — present by default on Debian/Parrot
 - Tailscale support is optional and just reflects "not available"/"not connected" if `tailscaled` isn't running
+
+## Changelog
+
+### 1.1.0
+- Requires DMS 2.0+ (Dux Shell). DMS 1.x is no longer supported.
+- Migrated from the deprecated `DankIcon` wrapper to `DIcon` from `qs.DCommon.Widgets`, so DMS 2.0 no longer logs deprecation warnings for this plugin.
+- `plugin.json`: added `requires_dms: ">=2.0.0"` and renamed `requires` to `dependencies` (the 2.0 manifest field name).
+
+### 1.0.0
+- Initial release.
 
 ## License
 
