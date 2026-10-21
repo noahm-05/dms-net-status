@@ -1,6 +1,6 @@
 import QtQuick
 import qs.Common
-import qs.Widgets
+import qs.DCommon.Widgets
 
 StyledRect {
     id: root
@@ -31,7 +31,7 @@ StyledRect {
         anchors.verticalCenter: parent.verticalCenter
         spacing: Theme.spacingM
 
-        DankIcon {
+        DIcon {
             name: root.iconName
             size: Theme.iconSize
             color: root.iconColor
@@ -57,7 +57,7 @@ StyledRect {
         }
     }
 
-    DankIcon {
+    DIcon {
         anchors.right: parent.right
         anchors.rightMargin: Theme.spacingM
         anchors.verticalCenter: parent.verticalCenter

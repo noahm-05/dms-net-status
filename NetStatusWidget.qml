@@ -2,7 +2,7 @@ import QtQuick
 import Quickshell
 import qs.Common
 import qs.Services
-import qs.Widgets
+import qs.DCommon.Widgets
 import qs.Modules.Plugins
 
 PluginComponent {
@@ -159,7 +159,7 @@ PluginComponent {
         Row {
             spacing: Theme.spacingXS
 
-            DankIcon {
+            DIcon {
                 name: root.currentDisplay.icon
                 size: Theme.iconSize - 6
                 color: root.currentDisplay.color
@@ -180,7 +180,7 @@ PluginComponent {
         Column {
             spacing: Theme.spacingXXS
 
-            DankIcon {
+            DIcon {
                 name: root.currentDisplay.icon
                 size: Theme.iconSize - 6
                 color: root.currentDisplay.color
@@ -207,7 +207,7 @@ PluginComponent {
             Component.onCompleted: root.refreshNetwork()
 
             headerActions: Component {
-                DankIcon {
+                DIcon {
                     name: "refresh"
                     size: Theme.iconSize - 6
                     color: refreshArea.containsMouse ? Theme.primary : Theme.surfaceVariantText
